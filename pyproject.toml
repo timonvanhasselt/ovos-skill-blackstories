@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ovos-skill-blackstories"
+version = "0.1.0"
+description = "An OVOS skill for playing Black Stories with Gemini"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+authors = [
+  { name = "Timon van Hasselt", email = "timonvanhasselt@visio.org" }
+]
+requires-python = ">=3.8"
+dependencies = [
+  "ovos-workshop",
+  "ovos-utils",
+  "ovos-bus-client",
+  "google-generativeai"
+]
+
+[project.urls]
+Homepage = "https://github.com/timonvanhasselt/ovos-skill-blackstories"
+
+[project.entry-points."ovos.plugin.skill"]
+blackstories_timonvanhasselt = "ovos_blackstories:BlackStoriesSkill"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.package-data]
+"ovos_blackstories" = ["locale/*", "locale/*/*", "riddles.json"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ovos_blackstories"]
+

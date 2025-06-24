@@ -1,0 +1,4 @@
+include README.md
+include LICENSE
+recursive-include ovos_blackstories/locale *
+include ovos_blackstories/riddles.json
